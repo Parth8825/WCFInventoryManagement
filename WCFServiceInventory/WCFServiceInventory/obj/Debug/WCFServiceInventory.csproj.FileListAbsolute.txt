@@ -1,0 +1,7 @@
+C:\Users\parth\Documents\GitHub\WCFInventoryManagement\WCFServiceInventory\WCFServiceInventory\bin\WCFServiceInventory.dll.config
+C:\Users\parth\Documents\GitHub\WCFInventoryManagement\WCFServiceInventory\WCFServiceInventory\bin\WCFServiceInventory.dll
+C:\Users\parth\Documents\GitHub\WCFInventoryManagement\WCFServiceInventory\WCFServiceInventory\bin\WCFServiceInventory.pdb
+C:\Users\parth\Documents\GitHub\WCFInventoryManagement\WCFServiceInventory\WCFServiceInventory\obj\Debug\WCFServiceInventory.csproj.AssemblyReference.cache
+C:\Users\parth\Documents\GitHub\WCFInventoryManagement\WCFServiceInventory\WCFServiceInventory\obj\Debug\WCFServiceInventory.csproj.CoreCompileInputs.cache
+C:\Users\parth\Documents\GitHub\WCFInventoryManagement\WCFServiceInventory\WCFServiceInventory\obj\Debug\WCFServiceInventory.dll
+C:\Users\parth\Documents\GitHub\WCFInventoryManagement\WCFServiceInventory\WCFServiceInventory\obj\Debug\WCFServiceInventory.pdb
