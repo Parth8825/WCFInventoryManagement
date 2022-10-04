@@ -3,7 +3,7 @@
     <asp:ScriptManager ID="script1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="panel1" runat="server">
         <ContentTemplate>
-            <h2>Welcome to Inventory Management Solutions!!</h2>
+            <h2 style="text-align: center;">Welcome to Inventory Management Solutions!!</h2>
             <br />
             <br />
             <h1><span class="badge bg-info btn-lg btn-block">Eenter New Order</span></h1>
