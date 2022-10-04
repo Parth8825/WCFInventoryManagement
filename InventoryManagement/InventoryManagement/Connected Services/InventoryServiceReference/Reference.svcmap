@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="726da755-8b6c-40f9-ae38-aa31a1e1ab7e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:80/Temporary_Listen_addresses/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="90564d85-a567-48d4-9a44-738e57de3381" SourceId="1" SourceUrl="http://localhost/Temporary_Listen_addresses/?xsd=xsd1" />
+    <MetadataFile FileName="InventoryService.wsdl" MetadataType="Wsdl" ID="458536d2-5b74-40d7-8b02-141f461ac841" SourceId="1" SourceUrl="http://localhost/Temporary_Listen_addresses/?wsdl" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="19dd0f45-0f7f-451e-86a1-de63ec6a2d19" SourceId="1" SourceUrl="http://localhost/Temporary_Listen_addresses/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="c8741834-b8bc-4c89-bf4f-3f95e1cb7819" SourceId="1" SourceUrl="http://localhost/Temporary_Listen_addresses/?xsd=xsd2" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="38d0407d-6bbb-47f8-b7b6-8ae0eeb6dba8" SourceId="1" SourceUrl="http://localhost/Temporary_Listen_addresses/?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

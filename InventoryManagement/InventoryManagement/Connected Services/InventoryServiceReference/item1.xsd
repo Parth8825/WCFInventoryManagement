@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFServiceInventory" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFServiceInventory" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SalesmanBO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Commision" type="xs:float" />
+      <xs:element minOccurs="0" name="SalesmanId" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesmanName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesmanBO" nillable="true" type="tns:SalesmanBO" />
+  <xs:complexType name="CustomerBO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Grade" type="xs:double" />
+      <xs:element minOccurs="0" name="SalesId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerBO" nillable="true" type="tns:CustomerBO" />
+  <xs:complexType name="OrderBO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderNo" type="xs:int" />
+      <xs:element minOccurs="0" name="PurchAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="SalesmanId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderBO" nillable="true" type="tns:OrderBO" />
+</xs:schema>
