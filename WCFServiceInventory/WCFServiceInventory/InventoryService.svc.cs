@@ -13,6 +13,20 @@ namespace WCFServiceInventory
     {
 
         // Salesman
+        public List<SalesmanBO> GetSalesman()
+        {
+            List<SalesmanBO> salesman = new List<SalesmanBO>();
+            try
+            {
+                SalesmanDA dataAccess = new SalesmanDA();
+                return dataAccess.GetSalesmanData();
+            }
+            catch
+            {
+                return salesman;
+            }
+        }
+
         public int InsertNewSalesman(SalesmanBO newSalesman)
         {
             try
@@ -53,6 +67,20 @@ namespace WCFServiceInventory
         }
 
         //Customer
+        public List<CustomerBO> GetCustomer()
+        {
+            List<CustomerBO> customer = new List<CustomerBO>();
+            try
+            {
+                CustomerDA dataAccess = new CustomerDA();
+                return dataAccess.GetCustomerData();
+            }
+            catch
+            {
+                return customer;
+            }
+        }
+
         public int InsertNewCustomer(CustomerBO newCustomer)
         {
             try
@@ -93,6 +121,20 @@ namespace WCFServiceInventory
         }
 
         //Order
+        public List<OrderBO> GetOrder()
+        {
+            List<OrderBO> order = new List<OrderBO>();
+            try
+            {
+                OrderDA dataAccess = new OrderDA();
+                return dataAccess.GetOrderData();
+            }
+            catch
+            {
+                return order;
+            }
+        }
+
         public int InsertNewOrder(OrderBO newOrder)
         {
             try

@@ -26,7 +26,7 @@ namespace InventoryManagement.InventoryServiceReference {
         private string CityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float CommisionField;
+        private double CommisionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int SalesmanIdField;
@@ -58,7 +58,7 @@ namespace InventoryManagement.InventoryServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public float Commision {
+        public double Commision {
             get {
                 return this.CommisionField;
             }
@@ -328,6 +328,12 @@ namespace InventoryManagement.InventoryServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="InventoryServiceReference.ISalesmanService")]
     public interface ISalesmanService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalesmanService/GetSalesman", ReplyAction="http://tempuri.org/ISalesmanService/GetSalesmanResponse")]
+        InventoryManagement.InventoryServiceReference.SalesmanBO[] GetSalesman();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalesmanService/GetSalesman", ReplyAction="http://tempuri.org/ISalesmanService/GetSalesmanResponse")]
+        System.Threading.Tasks.Task<InventoryManagement.InventoryServiceReference.SalesmanBO[]> GetSalesmanAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalesmanService/InsertNewSalesman", ReplyAction="http://tempuri.org/ISalesmanService/InsertNewSalesmanResponse")]
         int InsertNewSalesman(InventoryManagement.InventoryServiceReference.SalesmanBO newSalesman);
         
@@ -374,6 +380,14 @@ namespace InventoryManagement.InventoryServiceReference {
                 base(binding, remoteAddress) {
         }
         
+        public InventoryManagement.InventoryServiceReference.SalesmanBO[] GetSalesman() {
+            return base.Channel.GetSalesman();
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagement.InventoryServiceReference.SalesmanBO[]> GetSalesmanAsync() {
+            return base.Channel.GetSalesmanAsync();
+        }
+        
         public int InsertNewSalesman(InventoryManagement.InventoryServiceReference.SalesmanBO newSalesman) {
             return base.Channel.InsertNewSalesman(newSalesman);
         }
@@ -402,6 +416,12 @@ namespace InventoryManagement.InventoryServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="InventoryServiceReference.ICustomerService")]
     public interface ICustomerService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomer", ReplyAction="http://tempuri.org/ICustomerService/GetCustomerResponse")]
+        InventoryManagement.InventoryServiceReference.CustomerBO[] GetCustomer();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomer", ReplyAction="http://tempuri.org/ICustomerService/GetCustomerResponse")]
+        System.Threading.Tasks.Task<InventoryManagement.InventoryServiceReference.CustomerBO[]> GetCustomerAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/InsertNewCustomer", ReplyAction="http://tempuri.org/ICustomerService/InsertNewCustomerResponse")]
         int InsertNewCustomer(InventoryManagement.InventoryServiceReference.CustomerBO newCustomer);
@@ -449,6 +469,14 @@ namespace InventoryManagement.InventoryServiceReference {
                 base(binding, remoteAddress) {
         }
         
+        public InventoryManagement.InventoryServiceReference.CustomerBO[] GetCustomer() {
+            return base.Channel.GetCustomer();
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagement.InventoryServiceReference.CustomerBO[]> GetCustomerAsync() {
+            return base.Channel.GetCustomerAsync();
+        }
+        
         public int InsertNewCustomer(InventoryManagement.InventoryServiceReference.CustomerBO newCustomer) {
             return base.Channel.InsertNewCustomer(newCustomer);
         }
@@ -477,6 +505,12 @@ namespace InventoryManagement.InventoryServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="InventoryServiceReference.IOrderService")]
     public interface IOrderService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrder", ReplyAction="http://tempuri.org/IOrderService/GetOrderResponse")]
+        InventoryManagement.InventoryServiceReference.OrderBO[] GetOrder();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrder", ReplyAction="http://tempuri.org/IOrderService/GetOrderResponse")]
+        System.Threading.Tasks.Task<InventoryManagement.InventoryServiceReference.OrderBO[]> GetOrderAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/InsertNewOrder", ReplyAction="http://tempuri.org/IOrderService/InsertNewOrderResponse")]
         int InsertNewOrder(InventoryManagement.InventoryServiceReference.OrderBO newOrder);
@@ -522,6 +556,14 @@ namespace InventoryManagement.InventoryServiceReference {
         
         public OrderServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public InventoryManagement.InventoryServiceReference.OrderBO[] GetOrder() {
+            return base.Channel.GetOrder();
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagement.InventoryServiceReference.OrderBO[]> GetOrderAsync() {
+            return base.Channel.GetOrderAsync();
         }
         
         public int InsertNewOrder(InventoryManagement.InventoryServiceReference.OrderBO newOrder) {

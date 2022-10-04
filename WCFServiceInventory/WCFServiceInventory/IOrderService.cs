@@ -12,6 +12,9 @@ namespace WCFServiceInventory
     public interface IOrderService
     {
         [OperationContract]
+        List<OrderBO> GetOrder();
+
+        [OperationContract]
         int InsertNewOrder(OrderBO newOrder);
 
         [OperationContract]

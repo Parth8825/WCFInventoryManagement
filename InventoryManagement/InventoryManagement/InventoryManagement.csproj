@@ -69,6 +69,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Connected Services\InventoryServiceReference\InventoryManagement.InventoryServiceReference.CustomerBO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\InventoryServiceReference\InventoryManagement.InventoryServiceReference.OrderBO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\InventoryServiceReference\InventoryManagement.InventoryServiceReference.SalesmanBO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\InventoryServiceReference\item.disco" />
     <None Include="Connected Services\InventoryServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\InventoryServiceReference\configuration.svcinfo" />

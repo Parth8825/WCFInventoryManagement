@@ -12,8 +12,6 @@ namespace InventoryManagement
 {
     public partial class Order : System.Web.UI.Page
     {
-        private string _connectionString = ConfigurationManager.ConnectionStrings["InventoryConnectionString"].ConnectionString;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -135,22 +133,11 @@ namespace InventoryManagement
 
         private void BindGridView()
         {
-            SqlConnection connection = new SqlConnection(_connectionString);
-
             try
             {
-                connection.Open();
-                var query = "select * from orders;";
-                SqlCommand cmd = new SqlCommand(query, connection);
-                DataTable DT = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(DT);
-
-                if (DT.Rows.Count > 0)
-                {
-                    gvOrder.DataSource = DT;
-                    gvOrder.DataBind();
-                }
+                InventoryManagement.InventoryServiceReference.OrderServiceClient businessLogic = new InventoryServiceReference.OrderServiceClient("BasicHttpBinding_IOrderService");
+                gvOrder.DataSource = businessLogic.GetOrder();
+                gvOrder.DataBind();
             }
             catch (Exception ex)
             {
