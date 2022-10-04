@@ -12,6 +12,42 @@ namespace WCFServiceInventory
     {
         private string _connectionString = ConfigurationManager.ConnectionStrings["InventoryConnectionString"].ConnectionString;
 
+        public List<SalesmanBO> GetSalesmanData()
+        {
+            SqlConnection connection = new SqlConnection(_connectionString);
+            List<SalesmanBO> salesman = new List<SalesmanBO>();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_SelectSalesman", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        SalesmanBO salesmans = new SalesmanBO();
+                        salesmans.SalesmanId = Convert.ToInt32(dr["salesman_id"]);
+                        salesmans.SalesmanName = (dr["name"]).ToString();
+                        salesmans.City = (dr["city"]).ToString();
+                        salesmans.Commision = Convert.ToDouble(dr["commission"]);
+                        salesman.Add(salesmans);
+                    }
+                }
+                return salesman;
+            }
+            catch
+            {
+                return salesman;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
         public int InsertSalesman(SalesmanBO salesman)
         {
             SqlConnection connection = new SqlConnection(_connectionString);

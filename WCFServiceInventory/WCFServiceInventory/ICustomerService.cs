@@ -12,6 +12,9 @@ namespace WCFServiceInventory
     public interface ICustomerService
     {
         [OperationContract]
+        List<CustomerBO> GetCustomer();
+
+        [OperationContract]
         int InsertNewCustomer(CustomerBO newCustomer);
 
         [OperationContract]

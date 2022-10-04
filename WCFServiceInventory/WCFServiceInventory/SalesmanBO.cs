@@ -11,7 +11,7 @@ namespace WCFServiceInventory
         private int _SalesmanId;
         private string _SalesmanName;
         private string _City;
-        private float _Commision;
+        private double _Commision;
 
         // Get Set values
         public int SalesmanId
@@ -30,7 +30,7 @@ namespace WCFServiceInventory
             get { return _City; }
             set { _City = value; }
         }
-        public float Commision
+        public double Commision
         {
             get { return _Commision; }
             set { _Commision = value; }

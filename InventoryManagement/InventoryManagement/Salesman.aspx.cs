@@ -12,7 +12,6 @@ namespace InventoryManagement
 {
     public partial class Salesman : System.Web.UI.Page
     {
-        private string _connectionString = ConfigurationManager.ConnectionStrings["InventoryConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -130,29 +129,17 @@ namespace InventoryManagement
 
         private void BindGridView()
         {
-            SqlConnection connection = new SqlConnection(_connectionString);
             try
             {
-                connection.Open();
-                var query = "select * from salesman;";
-                SqlCommand cmd = new SqlCommand(query, connection);
-                DataTable DT = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(DT);
-
-                if (DT.Rows.Count > 0)
-                {
-                    gvSalesman.DataSource = DT;
-                    gvSalesman.DataBind();
-                }
+                InventoryManagement.InventoryServiceReference.SalesmanServiceClient businessLogic = new InventoryServiceReference.SalesmanServiceClient("BasicHttpBinding_ISalesmanService");
+                gvSalesman.DataSource = businessLogic.GetSalesman();
+                gvSalesman.DataBind();
             }
             catch (Exception ex)
             {
                 string message = ex.Message;
                 throw new Exception(message, ex);
             }
-            finally { connection.Close(); }
-
         }
 
         private void IfCondition(int ifResult, string ifMessage, string messageKey)
