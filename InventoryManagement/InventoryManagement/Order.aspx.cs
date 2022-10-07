@@ -17,9 +17,25 @@ namespace InventoryManagement
             if (!Page.IsPostBack)
             {
                 BindGridView();
+                DropDownListData();
             }
         }
+        private void DropDownListData()
+        {
+            InventoryManagement.InventoryServiceReference.SalesmanServiceClient salesmanBusinessLogic = new InventoryServiceReference.SalesmanServiceClient("BasicHttpBinding_ISalesmanService");
+            dlSalesmanId.DataSource = salesmanBusinessLogic.GetSalesman();
+            dlSalesmanId.DataTextField = "SalesmanId";
+            dlSalesmanId.DataValueField = "SalesmanId";
+            dlSalesmanId.DataBind();
+            dlSalesmanId.Items.Insert(0, new ListItem("Please Select ID", "0"));
 
+            InventoryManagement.InventoryServiceReference.CustomerServiceClient customerBusinessLogic = new InventoryServiceReference.CustomerServiceClient("BasicHttpBinding_ICustomerService");
+            dlCustomerId.DataSource = customerBusinessLogic.GetCustomer();
+            dlCustomerId.DataTextField = "CustomerId";
+            dlCustomerId.DataValueField = "CustomerId";
+            dlCustomerId.DataBind();
+            dlCustomerId.Items.Insert(0, new ListItem("Please Select ID", "0"));
+        }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             try
@@ -27,7 +43,7 @@ namespace InventoryManagement
                 int orderNo = int.Parse(txtOrderNo.Text);
                 double purchAmt = double.Parse(txtPurchAmt.Text);
                 DateTime orderDate = Convert.ToDateTime(txtOrderDate.Text);
-                int customerId = int.Parse(dlCustId.Text);
+                int customerId = int.Parse(dlCustomerId.Text);
                 int salesmanId = int.Parse(dlSalesmanId.Text);
 
                 InventoryManagement.InventoryServiceReference.OrderBO newOrder = new InventoryServiceReference.OrderBO()
@@ -66,7 +82,7 @@ namespace InventoryManagement
                 int orderNo = int.Parse(txtOrderNo.Text);
                 double purchAmt = double.Parse(txtPurchAmt.Text);
                 DateTime orderDate = Convert.ToDateTime(txtOrderDate.Text);
-                int customerId = int.Parse(dlCustId.Text);
+                int customerId = int.Parse(dlCustomerId.Text);
                 int salesmanId = int.Parse(dlSalesmanId.Text);
 
                 InventoryManagement.InventoryServiceReference.OrderBO order = new InventoryServiceReference.OrderBO()
@@ -148,7 +164,7 @@ namespace InventoryManagement
         }
         private void ClearFormFields()
         {
-            dlCustId.SelectedIndex = 0;
+            dlCustomerId.SelectedIndex = 0;
             txtOrderDate.Text = "";
             txtOrderNo.Text = "";
             txtPurchAmt.Text = "";

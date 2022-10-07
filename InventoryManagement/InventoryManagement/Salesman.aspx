@@ -66,7 +66,6 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:InventoryConnectionString %>" SelectCommand="SELECT * FROM [salesman]"></asp:SqlDataSource>
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
