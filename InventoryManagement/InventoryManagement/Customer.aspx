@@ -35,10 +35,8 @@
             <div class="form-group row">
                 <label for="commission" class="col-sm-2 col-form-label">Salesman id</label>
                 <div class="col-sm-10">
-                    <asp:DropDownList class="form-control" ID="dlSalesmanId" runat="server" DataSourceID="SqlDataSource2" DataTextField="salesman_id" DataValueField="salesman_id" AppendDataBoundItems="true">
-                        <asp:ListItem Value="0" Text="Please Select ID"></asp:ListItem>
+                    <asp:DropDownList class="form-control" ID="dlSalesmanId" runat="server" AppendDataBoundItems="true">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:InventoryConnectionString %>" SelectCommand="SELECT [salesman_id] FROM [salesman]"></asp:SqlDataSource>
                 </div>
             </div>
             <div class="form-group row">
@@ -68,7 +66,6 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:InventoryConnectionString %>" SelectCommand="SELECT * FROM [customer]"></asp:SqlDataSource>
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>

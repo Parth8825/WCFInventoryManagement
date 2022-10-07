@@ -29,19 +29,15 @@
             <div class="form-group row">
                 <label for="commission" class="col-sm-2 col-form-label">Customer Id</label>
                 <div class="col-sm-10">
-                    <asp:DropDownList class="form-control" ID="dlCustId" runat="server" DataSourceID="SqlDataSource2" DataTextField="customer_id" DataValueField="customer_id" AppendDataBoundItems="true">
-                        <asp:ListItem Value="0" Text="Please Select ID"></asp:ListItem>
+                    <asp:DropDownList class="form-control" ID="dlCustomerId" runat="server" AppendDataBoundItems="true">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:InventoryConnectionString %>" SelectCommand="SELECT [customer_id] FROM [customer]"></asp:SqlDataSource>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="commission" class="col-sm-2 col-form-label">Salesman Id</label>
                 <div class="col-sm-10">
-                    <asp:DropDownList class="form-control" ID="dlSalesmanId" runat="server" DataSourceID="SqlDataSource3" DataTextField="salesman_id" DataValueField="salesman_id" AppendDataBoundItems="true">
-                        <asp:ListItem Value="0" Text="Please Select ID"></asp:ListItem>
+                     <asp:DropDownList class="form-control" ID="dlSalesmanId" runat="server" AppendDataBoundItems="true">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:InventoryConnectionString %>" SelectCommand="SELECT [salesman_id] FROM [salesman]"></asp:SqlDataSource>
                 </div>
             </div>
             <div class="form-group row">
@@ -76,7 +72,6 @@
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
             </div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:InventoryConnectionString %>" SelectCommand="SELECT * FROM [orders]"></asp:SqlDataSource>
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>

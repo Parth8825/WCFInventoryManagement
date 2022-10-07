@@ -18,9 +18,18 @@ namespace InventoryManagement
             if (!Page.IsPostBack)
             {
                 BindGridView();
+                DropDownListData();
             }
         }
-
+        private void DropDownListData()
+        {
+            InventoryManagement.InventoryServiceReference.SalesmanServiceClient businessLogic = new InventoryManagement.InventoryServiceReference.SalesmanServiceClient("BasicHttpBinding_ISalesmanService");
+            dlSalesmanId.DataSource = businessLogic.GetSalesman();
+            dlSalesmanId.DataTextField = "SalesmanId";
+            dlSalesmanId.DataValueField = "SalesmanId";
+            dlSalesmanId.DataBind();
+            dlSalesmanId.Items.Insert(0, new ListItem("Please Select ID", "0"));
+        }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             try
