@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Order.aspx.cs" Inherits="InventoryManagement.Order" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="script1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="panel1" runat="server">
@@ -36,7 +37,7 @@
             <div class="form-group row">
                 <label for="commission" class="col-sm-2 col-form-label">Salesman Id</label>
                 <div class="col-sm-10">
-                     <asp:DropDownList class="form-control" ID="dlSalesmanId" runat="server" AppendDataBoundItems="true">
+                    <asp:DropDownList class="form-control" ID="dlSalesmanId" runat="server" AppendDataBoundItems="true">
                     </asp:DropDownList>
                 </div>
             </div>
@@ -59,6 +60,19 @@
             <div class="text-center">
 
                 <asp:GridView ID="gvOrder" runat="server" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <Columns>
+
+                        <asp:BoundField DataField="OrderNo" HeaderText="OrderNo" />
+
+                        <asp:BoundField DataField="PurchAmt" HeaderText="PurchAmt" SortExpression="PurchAmt" />
+
+                        <asp:BoundField DataField="OrderDate" HeaderText="OrderDate" SortExpression="OrderDate" />
+
+                        <asp:BoundField DataField="CustomerId" HeaderText="CustomerId" SortExpression="CustomerId" />
+
+                        <asp:BoundField DataField="SalesmanId" HeaderText="SalesmanId" SortExpression="SalesmanId" />
+
+                    </Columns>
                     <AlternatingRowStyle BackColor="White" />
                     <EditRowStyle BackColor="#7C6F57" />
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
